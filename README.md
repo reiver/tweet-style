@@ -18,7 +18,7 @@
 </tweet>
 ```
 
-You use tweet-style to turn XML that has that structure into XHTML that can be viewed in the web-browser.
+You use **tweet-style** to turn XML that has that structure into XHTML that can be viewed in the web-browser.
 
 ## Import
 
