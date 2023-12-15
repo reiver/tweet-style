@@ -34,6 +34,9 @@
 	<p>at <time><xsl:value-of select="created_at" /></time></p>
 </main>
 <section>
+	<xsl:variable name="threadid" select="thread/id[1]" />
+	<xsl:variable name="threadpath" select="concat('../../thread/', $threadid, '/thread.xml')" />
+	<xsl:if test="thread/id"><a href="{$threadpath}">view as thread</a></xsl:if>
 	<nav>
 	<ul class="tweet-thread">
 	<xsl:for-each select="thread/id">
