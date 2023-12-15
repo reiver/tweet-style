@@ -11,8 +11,13 @@
 <style>
 .tweet-text {
 	border-left: 0.3rem solid;
-	padding: 0.3rem 0.6rem;
-	font-size: 200%;
+	padding: 0.1545rem 0.618rem;
+	font-size: 162%;
+	white-space: pre-wrap;
+}
+.tweet-attachments img {
+	max-width: 23rem;
+	max-height: 23rem;
 }
 </style>
 </head>
@@ -20,6 +25,11 @@
 <main>
 	<h1>tweet by @<xsl:value-of select="author/username" /></h1>
 	<p class="tweet-text"><xsl:value-of select="text" /></p>
+	<div class="tweet-attachments">
+	<xsl:for-each select="attachments/media">
+	<a rel="enclosure" href="{text()}"><img src="{text()}" /></a>
+	</xsl:for-each>
+	</div>
 	<address>by @<xsl:value-of select="author/username" /> (<xsl:value-of select="author/name" />)</address>
 	<p>at <time><xsl:value-of select="created_at" /></time></p>
 </main>
@@ -27,7 +37,7 @@
 	<p>
 		Original URL:
 		<br />
-		https://twitter.com/reiver/status/<xsl:value-of select="id" />
+		https://twitter.com/<xsl:value-of select="author/username" />/status/<xsl:value-of select="id" />
 	</p>
 </footer>
 </body>
