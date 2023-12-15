@@ -33,6 +33,15 @@
 	<address>by @<xsl:value-of select="author/username" /> (<xsl:value-of select="author/name" />)</address>
 	<p>at <time><xsl:value-of select="created_at" /></time></p>
 </main>
+<section>
+	<nav>
+	<ul class="tweet-thread">
+	<xsl:for-each select="thread/id">
+		<li><a href="../{text()}/tweet.xml"><xsl:value-of select="text()" /></a></li>
+	</xsl:for-each>
+	</ul>
+	</nav>
+</section>
 <footer>
 	<p>
 		Original URL:
