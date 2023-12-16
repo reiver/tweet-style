@@ -26,7 +26,7 @@
 <main>
 <xsl:for-each select="tweets/id">
 	<xsl:variable name="tweetid" select="text()" />
-	<xsl:variable name="tweetpath" select="concat('../../status/', $tweetid, '/tweet.xml')" />
+	<xsl:variable name="tweetpath" select="concat('../status/', $tweetid, '/tweet.xml')" />
 	<xsl:variable name="tweetdata" select="document($tweetpath)" />
 	<section class="tweet">
 		<p class="tweet-text"><xsl:value-of select="$tweetdata/tweet/text" /></p>
